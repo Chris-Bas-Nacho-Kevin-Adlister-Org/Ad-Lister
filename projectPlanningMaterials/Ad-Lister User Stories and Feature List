@@ -1,0 +1,110 @@
+Ad-Lister is an online C2C marketplace with an emphasis on in-person transactions. Users can view and post ads.
+
+****The marketplace, which has been optimized for smartphones, features large photos of products for sale via an infinite scroll interface. For buyers, products are featured based on the geo-location closest to the buyer to help encourage face-to-face user interactions and encourage community-centric relationships, but can also be filtered by category, price and distance. On the seller side, products are listed immediately by uploading a photo from a user’s smartphone or computer ; the platform makes it easy to sort inbound inquiries by the highest bid before contacting prospective buyers to agree upon price and meeting place.
+
+
+CRUDable Entities
+	User
+	Ad
+	Favorites List
+
+As a vistor, I can...
+	View the landing page
+	Register for an account
+	View ads, but not contact information
+	Browse/sort all ads
+
+As a user, I can...
+	View the landing page
+	Log in
+	Log out
+	View our profile
+	Edit our profile
+	See other people’s profiles/items for sale
+	Browse/sort all ads
+	View the full details of an ad
+	Post an ad
+	Edit an ad
+	Delete an ad
+	Mark an item as sold
+	See how many views one of my ads has
+	Save an ad to a ‘favorites’ collection
+	Contact the seller (through phone/email)
+
+
+Feature List
+	Team
+		feat: Create complete list of all views and basic sketches of the layout/wireframe
+		feat: Finalize DB design
+		feat: Plan theme and add columns to ads table needed for theme
+
+	Log in
+		feat: Log in link available on home page
+		feat: Once clicked, takes user to the 'Login/Sign up form'
+		feat: Once user enters login credentials for valid user, redirect user to home page
+
+	Sign up
+		feat: Log in link available on home page
+		feat: Once clicked, takes user to the 'Login/Sign up form'
+		feat: There a user may enter a username, email, and password
+		feat: New credentials are checked against user table, and if the username/email doesn't exist, create new user entry (with hashed and salted password)
+
+	Create new ad
+		feat: Is only available to logged in users, on the home page
+		feat: Once clicked, redirects to 'Create Ad' page
+		feat: 'Create Ad' page contains forms for 'Title', 'Description', 'Asking Price', 'Location', 'Condition'
+		feat: Once submitted, a new entry is created in the 'ads' database
+		feat: Redirects user to newly created ad page
+
+	Edit an ad directly on the Ad page (Full ad detail view)
+		feat: Add edit button
+		feat: Once edit button is clicked, takes you to Edit Ad page
+		feat: Edit Ad page is the same as Create Ad page, except the fields are pre-filled from existing ad, linked by ad ID. *Not helpful to understand the Edit Ad and Create Ad views as being the same, even though they look the same
+		feat: Edit page alows you to edit the title, description, asking price, location, condition
+		feat: After making edits and submitting, should overwrite existing entry in ad database
+		feat: Redirects user to the newly edited Ad page 
+
+	Any ad list view needs to divy up ads into numbered pages of say-25 ads or else we’d have to infinite scroll
+
+
+Define Query terms for browsing and sorting ads.
+	Categories
+		For sale
+			Electronics
+			Tools
+			Vehicles
+			Musical Instruments
+			Collectibles
+			Clothing
+			Misc
+		Looking to buy or trade
+			Electronics
+			Tools
+			Vehicles
+			Musical Instruments
+			Collectibles
+			Clothing
+			Misc
+	Price
+		Low-High
+		High-Low
+		Range
+
+	Condition
+	Search terms (would search title and body for term)
+	Popularity
+	Post-Date
+	Location
+		State, City, region, etc
+	Distance *moving to extra feature because this requires map interface*
+
+
+Possible Extra Features
+	Make seller an offer
+	View and respond to messages
+	Report user/profile
+	Rate buyer/seller experience
+	Preview ad before posting
+	Make ad editable directly on Ad page
+	Map interface
+	Flame if it's a hot item
