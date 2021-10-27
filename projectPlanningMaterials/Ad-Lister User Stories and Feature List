@@ -8,28 +8,25 @@ CRUDable Entities
 	Ad
 	Favorites List
 
-As a vistor, I can...
+As a visitor, I can...
 	View the landing page
 	Register for an account
 	View ads, but not contact information
 	Browse/sort all ads
 
 As a user, I can...
-	View the landing page
+	View the landing page (home page)
 	Log in
 	Log out
-	View our profile
-	Edit our profile
-	See other people’s profiles/items for sale
-	Browse/sort all ads
-	View the full details of an ad
-	Post an ad
+	Navigate to 'My Ads'
+	Edit my account info
+	View my listings
+	Save an ad to a ‘favorites’ collection
+	View my favorites
+	View an ad
+	Create an ad
 	Edit an ad
 	Delete an ad
-	Mark an item as sold
-	See how many views one of my ads has
-	Save an ad to a ‘favorites’ collection
-	Contact the seller (through phone/email)
 
 
 Feature List
@@ -38,10 +35,25 @@ Feature List
 		feat: Finalize DB design
 		feat: Plan theme and add columns to ads table needed for theme
 
+	Home page
+		feat: Banner at top
+		feat: Navbar
+		feat: Search bar
+		feat: Search button (magnifying glass)
+		feat:
+
+	Navbar
+		feat: If not logged in, displays 'Home', 'Create Ad', 'Log In'
+		feat: If logged in, displays 'Home', 'Create Ad', 'My Ads', 'Logout'
+
 	Log in
-		feat: Log in link available on home page
+		feat: Log in link available on navbar
 		feat: Once clicked, takes user to the 'Login/Sign up form'
 		feat: Once user enters login credentials for valid user, redirect user to home page
+
+	Log out
+		feat: If user is logged in, navbar displays 'Logout' button
+		feat: When clicked, logs user out
 
 	Sign up
 		feat: Log in link available on home page
@@ -49,8 +61,14 @@ Feature List
 		feat: There a user may enter a username, email, and password
 		feat: New credentials are checked against user table, and if the username/email doesn't exist, create new user entry (with hashed and salted password)
 
+	View 'My Ads'
+		feat: Display user information: 'Username', 'Profile Pic', 'Location', 'User ID', 'Email?', 'Phone number?'
+		feat: Able to edit user information
+		feat: 'My Listings' is a viewable tab, which displays your current ad listings (default tab)
+		feat: 'My Favorites' is a viewable tab, which displays your favorite ads
+
 	Create new ad
-		feat: Is only available to logged in users, on the home page
+		feat: Is available on the navbar
 		feat: Once clicked, redirects to 'Create Ad' page
 		feat: 'Create Ad' page contains forms for 'Title', 'Description', 'Asking Price', 'Location', 'Condition'
 		feat: Once submitted, a new entry is created in the 'ads' database
@@ -60,11 +78,11 @@ Feature List
 		feat: Add edit button
 		feat: Once edit button is clicked, takes you to Edit Ad page
 		feat: Edit Ad page is the same as Create Ad page, except the fields are pre-filled from existing ad, linked by ad ID. *Not helpful to understand the Edit Ad and Create Ad views as being the same, even though they look the same
-		feat: Edit page alows you to edit the title, description, asking price, location, condition
+		feat: Edit page allows you to edit the title, description, asking price, location, condition
 		feat: After making edits and submitting, should overwrite existing entry in ad database
-		feat: Redirects user to the newly edited Ad page 
+		feat: Redirects user to the newly edited Ad page
 
-	Any ad list view needs to divy up ads into numbered pages of say-25 ads or else we’d have to infinite scroll
+	Any ad list view needs to divvy up ads into numbered pages of say-25 ads or else we’d have to infinite scroll
 
 
 Define Query terms for browsing and sorting ads.
@@ -100,11 +118,15 @@ Define Query terms for browsing and sorting ads.
 
 
 Possible Extra Features
+	Filter/sort all ads
 	Make seller an offer
 	View and respond to messages
 	Report user/profile
+	See how many views one of my ads has
 	Rate buyer/seller experience
 	Preview ad before posting
 	Make ad editable directly on Ad page
 	Map interface
 	Flame if it's a hot item
+	Pop-up comment when favoring an ad
+	Mark an item as sold
