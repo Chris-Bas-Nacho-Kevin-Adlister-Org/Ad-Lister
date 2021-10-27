@@ -63,9 +63,9 @@ As a user, I can...
 
 Feature List
 	Team
-		-[] Create complete list of all views and basic sketches of the layout/wireframe
-		-[] Finalize DB design
-		-[] Plan theme and add columns to ads table needed for theme
+		-[ ] Create complete list of all views and basic sketches of the layout/wireframe
+		-[ ] Finalize DB design
+		-[ ] Plan theme and add columns to ads table needed for theme
 
 	Home page
 		-[] Banner at top
