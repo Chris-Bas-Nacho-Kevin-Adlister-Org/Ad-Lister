@@ -4,15 +4,45 @@ Ad-Lister is an online C2C marketplace with an emphasis on in-person transaction
 
 
 CRUDable Entities
-	User
-	Ad
-	Favorites List
+	Users
+	Ads
+	Favorites List??
+	My Ads List??
 
-As a visitor, I can...
+
+
+Database Design
+	users
+		id PK
+		username
+		email
+		password
+		phone_number
+
+	ads
+		id PK
+		user_id FK
+		title
+		description
+		condition
+		location
+		price_in_cents
+		post_date
+		category
+
+	favorites_list
+		user_id FK
+		ad_id FK
+
+
+
+
+As a vistor, I can...
 	View the landing page
 	Register for an account
+	Browse all ads
 	View ads, but not contact information
-	Browse/sort all ads
+
 
 As a user, I can...
 	View the landing page (home page)
@@ -29,6 +59,8 @@ As a user, I can...
 	Delete an ad
 
 
+
+
 Feature List
 	Team
 		feat: Create complete list of all views and basic sketches of the layout/wireframe
@@ -40,11 +72,21 @@ Feature List
 		feat: Navbar
 		feat: Search bar
 		feat: Search button (magnifying glass)
-		feat:
+		feat: Ads in horizontal view
+			- Picture
+			- Title
+			- Description
+			- Post Date
+			- Condition
+			- Price
 
 	Navbar
 		feat: If not logged in, displays 'Home', 'Create Ad', 'Log In'
 		feat: If logged in, displays 'Home', 'Create Ad', 'My Ads', 'Logout'
+
+	'Home' button
+		feat: Available on navbar
+		feat: Once clicked, redirects user to top of home page
 
 	Log in
 		feat: Log in link available on navbar
@@ -52,8 +94,55 @@ Feature List
 		feat: Once user enters login credentials for valid user, redirect user to home page
 
 	Log out
+		feat: Available on the navbar
 		feat: If user is logged in, navbar displays 'Logout' button
 		feat: When clicked, logs user out
+
+	'Create Ad' Button
+		feat: Is available on the navbar
+		feat: Once clicked, redirects to 'Create Ad' page
+
+	Create New Ad Page
+		feat: Forms for the following
+			- Title
+			- Location
+			- Condition
+			- Asking Price
+			- Description
+			- Category
+		feat: Submit button
+		feat: Cancel button
+		feat: When user selects category, a corresponding image is selected to use for the ad
+		feat: After submitting, should create new entry in ad database and redirects user to the newly created Ad page
+
+	'Edit User Info' Button
+		feat: Available on 'My Ads' page at the top
+		feat: Once clicked, redirects user to 'Edit User Info' page, where they are able to update their account details
+
+	Edit User Info Page
+		feat: Forms for the following:
+			- Full name
+			- Username
+			- Location
+			- Phone Number
+			- Email
+		feat: Once new changes are submitted, redirects user back to 'My Ads' page
+
+	'My Ads' button
+		feat: Available on the navbar
+		feat: Once clicked, redirects user to 'My Ads' page
+
+	'My Ads' Page
+		feat: Display user information at top: 'Username', 'Profile Pic', 'Location', 'User ID', 'Email?', 'Phone number?'
+		feat: Able to edit user information
+		feat: Navbar underneath user info
+		feat: 'My Listings' is a viewable tab, which displays your current ad listings (default tab)
+		feat: 'My Favorites' is a viewable tab, which displays your favorited ads
+
+	Favorite button
+		feat: Available on top right corner of ad listings, both in horizontal view and full view
+		feat: Once clicked, indicates to user that ad has been favorited
+		feat: Favorited ads appear in the user's 'My Favorites' tab, in the 'My Ads' page
 
 	Sign up
 		feat: Log in link available on home page
@@ -61,28 +150,42 @@ Feature List
 		feat: There a user may enter a username, email, and password
 		feat: New credentials are checked against user table, and if the username/email doesn't exist, create new user entry (with hashed and salted password)
 
-	View 'My Ads'
-		feat: Display user information: 'Username', 'Profile Pic', 'Location', 'User ID', 'Email?', 'Phone number?'
-		feat: Able to edit user information
-		feat: 'My Listings' is a viewable tab, which displays your current ad listings (default tab)
-		feat: 'My Favorites' is a viewable tab, which displays your favorite ads
+	Delete Button
+		feat: Available on ad listings, both in horizontal and full view, next to edit button
+		feat: When clicked, a user is prompted to make sure they really want to delete the ad
 
-	Create new ad
-		feat: Is available on the navbar
-		feat: Once clicked, redirects to 'Create Ad' page
-		feat: 'Create Ad' page contains forms for 'Title', 'Description', 'Asking Price', 'Location', 'Condition'
-		feat: Once submitted, a new entry is created in the 'ads' database
-		feat: Redirects user to newly created ad page
-
-	Edit an ad directly on the Ad page (Full ad detail view)
-		feat: Add edit button
+	Edit Button
+		feat: Available on ad listings, both in horizontal and full view, next to delete button
 		feat: Once edit button is clicked, takes you to Edit Ad page
-		feat: Edit Ad page is the same as Create Ad page, except the fields are pre-filled from existing ad, linked by ad ID. *Not helpful to understand the Edit Ad and Create Ad views as being the same, even though they look the same
-		feat: Edit page allows you to edit the title, description, asking price, location, condition
+
+	Edit Ad Page
+		feat: Forms for the following
+			- Title
+			- Location
+			- Condition
+			- Asking Price
+			- Description
+			- Category
+		feat: Submit button
+		feat: Cancel button
+		feat: When user selects category, a corresponding image is selected to use for the ad
 		feat: After making edits and submitting, should overwrite existing entry in ad database
-		feat: Redirects user to the newly edited Ad page
+		feat: After submitting, redirects user to the newly edited Ad page
+
+
+
 
 	Any ad list view needs to divvy up ads into numbered pages of say-25 ads or else we’d have to infinite scroll
+
+
+Views
+	Home page
+	Item view
+	Register/Log in page
+	My Ads/Profile
+	Edit Account Info
+	Create New Listing
+	Edit Existing Listing
 
 
 Define Query terms for browsing and sorting ads.
@@ -128,5 +231,7 @@ Possible Extra Features
 	Make ad editable directly on Ad page
 	Map interface
 	Flame if it's a hot item
-	Pop-up comment when favoring an ad
+	Pop-up comment when favorite-ing an ad
 	Mark an item as sold
+	Go to top button
+	Auto-collapsable header when scrolling
