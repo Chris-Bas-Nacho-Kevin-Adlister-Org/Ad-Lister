@@ -63,114 +63,114 @@ As a user, I can...
 
 Feature List
 	Team
-		feat: Create complete list of all views and basic sketches of the layout/wireframe
-		feat: Finalize DB design
-		feat: Plan theme and add columns to ads table needed for theme
+		-[] Create complete list of all views and basic sketches of the layout/wireframe
+		-[] Finalize DB design
+		-[] Plan theme and add columns to ads table needed for theme
 
 	Home page
-		feat: Banner at top
-		feat: Navbar
-		feat: Search bar
-		feat: Search button (magnifying glass)
-		feat: Ads in horizontal view
-			- Picture
-			- Title
-			- Description
-			- Post Date
-			- Condition
-			- Price
+		-[] Banner at top
+		-[] Navbar
+		-[] Search bar
+		-[] Search button (magnifying glass)
+		-[] Ads in horizontal view
+			-[] Picture
+			-[] Title
+			-[] Description
+			-[] Post Date
+			-[] Condition
+			-[] Price
 
 	Navbar
-		feat: If not logged in, displays 'Home', 'Create Ad', 'Log In'
-		feat: If logged in, displays 'Home', 'Create Ad', 'My Ads', 'Logout'
+		-[] If not logged in, displays 'Home', 'Create Ad', 'Log In'
+		-[] If logged in, displays 'Home', 'Create Ad', 'My Ads', 'Logout'
 
 	'Home' button
-		feat: Available on navbar
-		feat: Once clicked, redirects user to top of home page
+		-[] Available on navbar
+		-[] Once clicked, redirects user to top of home page
 
 	Log in
-		feat: Log in link available on navbar
-		feat: Once clicked, takes user to the 'Login/Sign up form'
-		feat: Once user enters login credentials for valid user, redirect user to home page
+		-[] Log in link available on navbar
+		-[] Once clicked, takes user to the 'Login/Sign up form'
+		-[] Once user enters login credentials for valid user, redirect user to home page
 
 	Log out
-		feat: Available on the navbar
-		feat: If user is logged in, navbar displays 'Logout' button
-		feat: When clicked, logs user out
+		-[] Available on the navbar
+		-[] If user is logged in, navbar displays 'Logout' button
+		-[] When clicked, logs user out
 
 	'Create Ad' Button
-		feat: Is available on the navbar
-		feat: Once clicked, redirects to 'Create Ad' page
+		-[] Is available on the navbar
+		-[] Once clicked, redirects to 'Create Ad' page
 
 	Create New Ad Page
-		feat: Forms for the following
-			- Title
-			- Location
-			- Condition
-			- Asking Price
-			- Description
-			- Category
-		feat: Submit button
-		feat: Cancel button
-		feat: When user selects category, a corresponding image is selected to use for the ad
-		feat: After submitting, should create new entry in ad database and redirects user to the newly created Ad page
+		-[] Forms for the following
+			-[] Title
+			-[] Location
+			-[] Condition
+			-[] Asking Price
+			-[] Description
+			-[] Category
+		-[] Submit button
+		-[] Cancel button
+		-[] When user selects category, a corresponding image is selected to use for the ad
+		-[] After submitting, should create new entry in ad database and redirects user to the newly created Ad page
 
 	'Edit User Info' Button
-		feat: Available on 'My Ads' page at the top
-		feat: Once clicked, redirects user to 'Edit User Info' page, where they are able to update their account details
+		-[] Available on 'My Ads' page at the top
+		-[] Once clicked, redirects user to 'Edit User Info' page, where they are able to update their account details
 
 	Edit User Info Page
-		feat: Forms for the following:
-			- Full name
-			- Username
-			- Location
-			- Phone Number
-			- Email
-		feat: Once new changes are submitted, redirects user back to 'My Ads' page
+		-[] Forms for the following:
+			-[] Full name
+			-[] Username
+			-[] Location
+			-[] Phone Number
+			-[] Email
+		-[] Once new changes are submitted, redirects user back to 'My Ads' page
 
 	'My Ads' button
-		feat: Available on the navbar
-		feat: Once clicked, redirects user to 'My Ads' page
+		-[] Available on the navbar
+		-[] Once clicked, redirects user to 'My Ads' page
 
 	'My Ads' Page
-		feat: Display user information at top: 'Username', 'Profile Pic', 'Location', 'User ID', 'Email?', 'Phone number?'
-		feat: Able to edit user information
-		feat: Navbar underneath user info
-		feat: 'My Listings' is a viewable tab, which displays your current ad listings (default tab)
-		feat: 'My Favorites' is a viewable tab, which displays your favorited ads
+		-[] Display user information at top: 'Username', 'Profile Pic', 'Location', 'User ID', 'Email?', 'Phone number?'
+		-[] Able to edit user information
+		-[] Navbar underneath user info
+		-[] 'My Listings' is a viewable tab, which displays your current ad listings (default tab)
+		-[] 'My Favorites' is a viewable tab, which displays your favorited ads
 
 	Favorite button
-		feat: Available on top right corner of ad listings, both in horizontal view and full view
-		feat: Once clicked, indicates to user that ad has been favorited
-		feat: Favorited ads appear in the user's 'My Favorites' tab, in the 'My Ads' page
+		-[] Available on top right corner of ad listings, both in horizontal view and full view
+		-[] Once clicked, indicates to user that ad has been favorited
+		-[] Favorited ads appear in the user's 'My Favorites' tab, in the 'My Ads' page
 
 	Sign up
-		feat: Log in link available on home page
-		feat: Once clicked, takes user to the 'Login/Sign up form'
-		feat: There a user may enter a username, email, and password
-		feat: New credentials are checked against user table, and if the username/email doesn't exist, create new user entry (with hashed and salted password)
+		-[] Log in link available on home page
+		-[] Once clicked, takes user to the 'Login/Sign up form'
+		-[] There a user may enter a username, email, and password
+		-[] New credentials are checked against user table, and if the username/email doesn't exist, create new user entry (with hashed and salted password)
 
 	Delete Button
-		feat: Available on ad listings, both in horizontal and full view, next to edit button
-		feat: When clicked, a user is prompted to make sure they really want to delete the ad
+		-[] Available on ad listings, both in horizontal and full view, next to edit button
+		-[] When clicked, a user is prompted to make sure they really want to delete the ad
 
 	Edit Button
-		feat: Available on ad listings, both in horizontal and full view, next to delete button
-		feat: Once edit button is clicked, takes you to Edit Ad page
+		-[] Available on ad listings, both in horizontal and full view, next to delete button
+		-[] Once edit button is clicked, takes you to Edit Ad page
 
 	Edit Ad Page
-		feat: Forms for the following
-			- Title
-			- Location
-			- Condition
-			- Asking Price
-			- Description
-			- Category
-		feat: Submit button
-		feat: Cancel button
-		feat: When user selects category, a corresponding image is selected to use for the ad
-		feat: After making edits and submitting, should overwrite existing entry in ad database
-		feat: After submitting, redirects user to the newly edited Ad page
+		-[] Forms for the following
+			-[] Title
+			-[] Location
+			-[] Condition
+			-[] Asking Price
+			-[] Description
+			-[] Category
+		-[] Submit button
+		-[] Cancel button
+		-[] When user selects category, a corresponding image is selected to use for the ad
+		-[] After making edits and submitting, should overwrite existing entry in ad database
+		-[] After submitting, redirects user to the newly edited Ad page
 
 
 
