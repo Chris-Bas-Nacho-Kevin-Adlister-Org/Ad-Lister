@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,6 +62,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
+        LocalDate currentdate = LocalDate.now();
         return new Ad(
             rs.getLong("id"),
             rs.getLong("user_id"),
@@ -68,7 +70,7 @@ public class MySQLAdsDao implements Ads {
             rs.getString("description"),
             rs.getString("condition"),
             //Will need to revisit to confirm proper date conversion
-            Date.valueOf(rs.getString("postDate")),
+            java.sql.Date.valueOf(currentdate),
             Integer.parseInt(rs.getString("priceInCents")),
             rs.getString("location"),
             rs.getString("category")
