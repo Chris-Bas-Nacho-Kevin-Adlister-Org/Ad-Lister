@@ -2,6 +2,7 @@ USE adlister_db;
 
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS favorites_list;
 
 CREATE TABLE users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -35,7 +36,7 @@ CREATE TABLE ads (
                 'Services',
                 'Electronic Media',
                 'Computers',
-                'Real Estate'),
+                'Real Estate') NOT NULL ,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
         ON DELETE CASCADE

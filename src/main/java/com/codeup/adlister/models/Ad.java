@@ -1,14 +1,17 @@
 package com.codeup.adlister.models;
 
+import java.sql.Date;
+
 public class Ad {
     private long id;
     private long userId;
     private String title;
     private String description;
     private String condition;
-    //private Date postDate; //need to figure out the date type we want to use
+    private Date postDate; //need to figure out the date type we want to use
     private int priceInCents;
     private String location;
+    private String category;
 
     public Ad(long id, long userId, String title, String description) {
         this.id = id;
