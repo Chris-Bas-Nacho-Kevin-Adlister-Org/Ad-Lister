@@ -57,10 +57,15 @@
                 </select>
             </div>
             <input type="submit" id="form-submit" class="btn btn-block btn-primary">
-<%--            <input type="submit" id="form-submit" class="btn btn-block btn-primary">--%>
-
-
         </form>
+
+        <form action="http://localhost:8080/ads">
+        <input type="submit" value="Cancel" class="btn btn-block btn-danger"/>
+    </form>
+<%--
+
+
+
     </div>
 <%--    <script>--%>
 <%--        //Got regex for currency validation Here--%>
