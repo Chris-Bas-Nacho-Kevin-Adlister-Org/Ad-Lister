@@ -13,17 +13,69 @@ public class Ad {
     private String location;
     private String category;
 
-    public Ad(long id, long userId, String title, String description) {
+
+    //has everything constructor
+    public Ad(long id, long userId, String title, String description, String condition, Date postDate, int priceInCents, String location, String category){
+        this.category = category;
+        this.location = location;
+        this.priceInCents = priceInCents;
         this.id = id;
+        this.description = description;
+        this.condition = condition;
         this.userId = userId;
         this.title = title;
+        this.postDate = postDate;
+    }
+    public Ad(long userId, String title, String description, String condition, Date postDate, int priceInCents, String location, String category){
+        this.category = category;
+        this.location = location;
+        this.priceInCents = priceInCents;
         this.description = description;
+        this.condition = condition;
+        this.userId = userId;
+        this.title = title;
+        this.postDate = postDate;
     }
 
-    public Ad(long userId, String title, String description) {
-        this.userId = userId;
-        this.title = title;
-        this.description = description;
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public Date getPostDate() {
+        return postDate;
+    }
+
+    public int getPriceInCents() {
+        return priceInCents;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
+
+    public void setPostDate(Date postDate) {
+        this.postDate = postDate;
+    }
+
+    public void setPriceInCents(int priceInCents) {
+        this.priceInCents = priceInCents;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public long getId() {
