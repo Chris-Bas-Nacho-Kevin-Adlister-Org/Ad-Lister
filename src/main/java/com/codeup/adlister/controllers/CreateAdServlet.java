@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Date;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
@@ -27,7 +28,13 @@ public class CreateAdServlet extends HttpServlet {
         Ad ad = new Ad(
             user.getId(),
             request.getParameter("title"),
-            request.getParameter("description")
+            request.getParameter("description"),
+            request.getParameter("condition"),
+            //https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html
+            Date.valueOf(request.getParameter("postDate")),//we will need to revisit this, probably
+            Integer.getInteger(request.getParameter("priceInCents")),
+            request.getParameter("location"),
+            request.getParameter("category")
         );
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
