@@ -16,7 +16,7 @@ public class HomePageServlet extends HttpServlet {
 
             request.setAttribute("ads", DaoFactory.getAdsDao().all());
             request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
-            System.out.println("im here bruh");
+            System.out.println("whazzz uppppp");
         }
 }
 
