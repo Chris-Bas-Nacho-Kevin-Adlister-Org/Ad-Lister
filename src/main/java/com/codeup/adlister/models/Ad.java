@@ -26,6 +26,7 @@ public class Ad {
         this.title = title;
         this.postDate = postDate;
     }
+    //no ID constructor
     public Ad(long userId, String title, String description, String condition, Date postDate, int priceInCents, String location, String category){
         this.category = category;
         this.location = location;
@@ -35,6 +36,16 @@ public class Ad {
         this.userId = userId;
         this.title = title;
         this.postDate = postDate;
+    }
+    //no ID no Date constructor USED ON AD-CREATION
+    public Ad(long userId, String title, String description, String condition, int priceInCents, String location, String category){
+        this.category = category;
+        this.location = location;
+        this.priceInCents = priceInCents;
+        this.description = description;
+        this.condition = condition;
+        this.userId = userId;
+        this.title = title;
     }
 
 

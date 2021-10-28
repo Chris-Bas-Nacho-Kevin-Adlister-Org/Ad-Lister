@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="priceInCents">Asking Price</label>
-                <input id="priceInCents" name="priceInCents" class="form-control" type="number">
+                <input id="priceInCents" name="priceInCents" class="form-control" type="text">
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
@@ -56,8 +56,23 @@
                     <option value="Misc">Misc</option>
                 </select>
             </div>
-            <input type="submit" class="btn btn-block btn-primary">
+            <input type="submit" id="form-submit" class="btn btn-block btn-primary">
         </form>
     </div>
+<%--    <script>--%>
+<%--        //Got regex for currency validation Here--%>
+<%--        //https://stackoverflow.com/questions/2227370/currency-validation--%>
+<%--        function validatePrice(){--%>
+<%--            let regex  = /^\d+(?:\.\d{0,2})$/;--%>
+<%--            if(! regex.test(priceField.value)){--%>
+<%--                submitButton.disabled = true;--%>
+<%--            } else{--%>
+<%--                submitButton.disabled = false;--%>
+<%--            }--%>
+<%--        }--%>
+<%--        var submitButton = document.getElementById("form-submit");--%>
+<%--        var priceField = document.getElementById('priceInCents');--%>
+<%--        priceField.addEventListener("keyup", validatePrice())--%>
+<%--    </script>--%>
 </body>
 </html>

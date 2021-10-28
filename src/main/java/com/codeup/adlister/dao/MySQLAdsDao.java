@@ -48,7 +48,8 @@ public class MySQLAdsDao implements Ads {
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
             stmt.setString(4,ad.getCondition());
-            stmt.setDate(5,ad.getPostDate());
+//            stmt.setDate(5,ad.getPostDate());
+            stmt.setDate(5, java.sql.Date.valueOf(LocalDate.now()));
             stmt.setInt(6, ad.getPriceInCents());
             stmt.setString(7, ad.getLocation());
             stmt.setString(8,ad.getCategory());
@@ -62,16 +63,17 @@ public class MySQLAdsDao implements Ads {
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
-        LocalDate currentdate = LocalDate.now();
+//        LocalDate currentdate = LocalDate.now();
+        Date currentDate = Date.valueOf(LocalDate.now());
         return new Ad(
             rs.getLong("id"),
             rs.getLong("user_id"),
             rs.getString("title"),
             rs.getString("description"),
-            rs.getString("condition"),
+            rs.getString("item_condition"),
             //Will need to revisit to confirm proper date conversion
-            java.sql.Date.valueOf(currentdate),
-            Integer.parseInt(rs.getString("priceInCents")),
+            rs.getDate("post_date"),
+            Integer.parseInt(rs.getString("price_in_cents")),
             rs.getString("location"),
             rs.getString("category")
         );

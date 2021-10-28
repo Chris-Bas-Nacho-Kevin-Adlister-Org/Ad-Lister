@@ -31,8 +31,8 @@ public class CreateAdServlet extends HttpServlet {
             request.getParameter("description"),
             request.getParameter("condition"),
             //https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html
-            Date.valueOf(request.getParameter("postDate")),//we will need to revisit this, probably
-            Integer.getInteger(request.getParameter("priceInCents")),
+//            Date.valueOf(request.getParameter("postDate")),//we will need to revisit this, probably
+            Integer.parseInt(request.getParameter("priceInCents")),
             request.getParameter("location"),
             request.getParameter("category")
         );
