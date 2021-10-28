@@ -1,8 +1,9 @@
 USE adlister_db;
 
+DROP TABLE IF EXISTS favorites_list;
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS favorites_list;
+
 
 CREATE TABLE users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
