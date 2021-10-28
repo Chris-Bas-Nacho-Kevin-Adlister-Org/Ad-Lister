@@ -57,6 +57,9 @@
                 </select>
             </div>
             <input type="submit" id="form-submit" class="btn btn-block btn-primary">
+<%--            <input type="submit" id="form-submit" class="btn btn-block btn-primary">--%>
+
+
         </form>
     </div>
 <%--    <script>--%>
