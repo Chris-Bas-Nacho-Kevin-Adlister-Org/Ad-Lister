@@ -23,6 +23,8 @@ public class CreateAdServlet extends HttpServlet {
             .forward(request, response);
     }
 
+
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
         Ad ad = new Ad(
@@ -40,3 +42,5 @@ public class CreateAdServlet extends HttpServlet {
         response.sendRedirect("/ads");
     }
 }
+
+
