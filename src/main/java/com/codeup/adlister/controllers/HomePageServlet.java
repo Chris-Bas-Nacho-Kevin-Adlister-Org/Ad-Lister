@@ -10,13 +10,10 @@ import java.io.IOException;
 
 @WebServlet(name = "HomePageServlet", urlPatterns = "/")
 public class HomePageServlet extends HttpServlet {
-
     @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
             request.setAttribute("ads", DaoFactory.getAdsDao().all());
             request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
-            System.out.println("whazzz uppppp");
         }
 }
 
