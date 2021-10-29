@@ -24,13 +24,18 @@ public class ViewProfileServlet extends HttpServlet {
         request.setAttribute("ads", DaoFactory.getAdsDao().all());
         List<Ad> allAds = DaoFactory.getAdsDao().all();
         List<Ad> userAds = new ArrayList<Ad>();
+        List<Ad> userFavoriteAds = new ArrayList<Ad>();
         User currentUser = ((User) request.getSession().getAttribute("user"));
         for(Ad ad : allAds){
             if(ad.getUserId() == currentUser.getId()){
                 userAds.add(ad);
-                System.out.println("Found an ad by this user");
+//                System.out.println("Found an ad by this user");
             }
         }
+//        for(Ad ad : allAds){
+//
+//        }
+        request.setAttribute("userFavoriteAds", userFavoriteAds);
         request.setAttribute("userAds", userAds);
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
