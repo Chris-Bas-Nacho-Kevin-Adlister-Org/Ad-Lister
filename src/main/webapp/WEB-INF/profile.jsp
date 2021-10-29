@@ -9,15 +9,15 @@
 </head>
 
 <body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-
     <div class="container">
+<%--        <img src="${pageContext.servletContext.contextPath}/img/animeGirl-1.jpg" alt="animeGirl" width="240" height="150">--%>
         <h3>Username: ${sessionScope.user.username}!</h3>
         <h3>Email: ${sessionScope.user.email}!</h3>
         <h3>Phone Number: ${sessionScope.user.phoneNumber}!</h3>
         <h3>User ID: ${sessionScope.user.id}!</h3>
         <button class="btn btn-block btn-primary">Edit account info</button>
     </div>
+    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <br>
 <%-- Here we'll have a tab for viewing the user's ads and one for viewing their favorites --%>
     <div class="container">
@@ -30,11 +30,11 @@
                 <div class="col-md-6">
                     <h2>${ad.title}</h2>
                     <p>${ad.description}</p>
-                    <p>${ad.condition}</p>
-                    <p>${ad.postDate}</p>
-                    <p>${ad.priceInCents}</p>
-                    <p>${ad.location}</p>
-                    <p>${ad.category}</p>
+                    <p>Condition: ${ad.condition}</p>
+                    <p>Post Date: ${ad.postDate}</p>
+                    <p>Price In Cents${ad.priceInCents}</p>
+                    <p>Location: ${ad.location}</p>
+                    <p>Category: ${ad.category}</p>
                 </div>
             </c:forEach>
         </div>
@@ -54,8 +54,6 @@
     </div>
     <script>
 <%--        script that handles activating and deactivating the above buttons and switching the display --%>
-
-<%--            Evidently toggling bootstrap classes on and off is not allowed because the toggling DOES NOT WORK --%>
         $(document).ready(function(){
             function tabSwitch(clickedButtonID){
                 //should switch the active tab to btn-secondary and the other to btn-primary
@@ -78,8 +76,6 @@
             $("#favoritesButton").on("click", function(){
                 tabSwitch("favoritesButton");
             });
-            // adsButton.click(tabSwitch(this.id));
-            // favoritesButton.click(tabSwitch(this.id));
         });
     </script>
 
