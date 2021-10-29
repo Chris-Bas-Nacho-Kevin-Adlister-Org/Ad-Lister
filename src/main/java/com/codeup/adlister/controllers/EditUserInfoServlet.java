@@ -14,13 +14,13 @@ import java.io.IOException;
 @WebServlet(name = "controllers.EditUserInfoServlet", urlPatterns = "/edit_info")
 public class EditUserInfoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String username = request.getParameter("username");
-        User user = DaoFactory.getUsersDao().findByUsername(username);
+
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
 
         request.getRequestDispatcher("/WEB-INF/editUserInfo.jsp").forward(request, response);
-
-
-
 
     }
 
