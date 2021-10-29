@@ -17,32 +17,6 @@
 <body>
 
 
-<div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-        <div class="col-md-4">
-            <img src="tools.png" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">${ad.title}</h5>
-                <div>
-                    <p class="card-text">${ad.description}</p>
-                    <p class="card-text"><small class="text-muted">${ad.postDate}</small>
-                        <small class="text-muted">${ad.location}</small>
-                    </p>
-                </div>
-                <div>
-                    <p class="card-text">${ad.condition}</p>
-                    <p class="card-text">${ad.priceInCents}</p>
-                    <p class="card-text">${ad.category}</p>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
 <%--<c:forEach var="ad" items="${ads}">--%>
 <%--        <h2>${ad.title}</h2>--%>
 <%--        <p>${ad.description}</p>--%>
