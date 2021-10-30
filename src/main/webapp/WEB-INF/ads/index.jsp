@@ -13,9 +13,17 @@
 </head>
 <body>
     <div class="container-lg">
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Adlister</h1>
+            </div>
+        </div>
 
-        <h1></h1>
+        <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        </form>
     <div>
 
         <c:forEach var="ad" items="${ads}">
@@ -32,6 +40,8 @@
                 <span class="user-id" data="${user.id}"></span>
             </div>
         </c:forEach>
+
+
 
     </div>
     </div>
