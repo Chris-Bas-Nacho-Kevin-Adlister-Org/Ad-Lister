@@ -62,16 +62,17 @@
                 }
                 //need to get the id of the ad which I'm trying to include as part of the ad-id span
                 //then we can make some sort of ajax request???? Check the commented link above
-                let adID = $(this).next().data().val();
-                let userID = $(this).next().next().data().val();
+                let adID = $(this).next().data().value; //this line doesn't work. It's supposed to grab the id of the ad whose favorite button you clicked.
+                //let userID = $(this).next().next().data().value;
+                //Logging to check we're grabbing it properly. once we have both we can try slapping them in ajax.
                 console.log(adID);
-                console.log(userID);
+                console.log(${user.id});
 
                 // $.ajax({
-                //     url: "saveIt", //urlpattern of favorites servlet should go here
+                //     url: "/favorite", //urlpattern of favorites servlet should go here
                 //
-                //     //type: "post",
-                //     data: value,
+                //     type: "post",
+                //     data: value, //figure out how to pack id of session user and adId in here?
                 //     cache: false,
                 //     success: function(data) {
                 //
