@@ -24,7 +24,7 @@ public class ViewProfileServlet extends HttpServlet {
         request.setAttribute("ads", DaoFactory.getAdsDao().all());
         List<Ad> allAds = DaoFactory.getAdsDao().all();
         List<Ad> userAds = new ArrayList<Ad>();
-        List<Ad> userFavoriteAds = DaoFactory.getFavoritesDao().favoritedAds();
+        List<Ad> allFavoriteAds = DaoFactory.getFavoritesDao().favoritedAds();
         User currentUser = ((User) request.getSession().getAttribute("user"));
         for(Ad ad : allAds){
             if(ad.getUserId() == currentUser.getId()){
@@ -33,9 +33,14 @@ public class ViewProfileServlet extends HttpServlet {
             }
         }
 //        Get list of logged in user's favorites
-//        for(Ad ad : allAds){
-//
-//        }
+
+        User sessionUser = (User) request.getSession().getAttribute("user");
+        List<Ad> userFavoriteAds = new ArrayList<Ad>();
+        for (Ad ad : allFavoriteAds){
+            if (sessionUser.getId() == ad.getUserId()){
+                userFavoriteAds.add(ad);
+            }
+        }
         request.setAttribute("userFavoriteAds", userFavoriteAds);
         request.setAttribute("userAds", userAds);
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);

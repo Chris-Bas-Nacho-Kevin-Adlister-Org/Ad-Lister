@@ -1,5 +1,10 @@
+<%@ page import="java.util.List" %>
+<%@ page import="com.codeup.adlister.models.Ad" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.codeup.adlister.models.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%-- writing java that takes the userFavoriteAds and puts only the ones that match the session user into a new array to use--%>
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
