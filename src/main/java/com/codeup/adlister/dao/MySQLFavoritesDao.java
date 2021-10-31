@@ -28,7 +28,19 @@ public class MySQLFavoritesDao implements Favorites{
     public List<Favorite> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM favorites");
+            stmt = connection.prepareStatement("SELECT * FROM favorites_list");
+            ResultSet rs = stmt.executeQuery();
+            return createFavoritesFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+    public List<Favorite> FavoritedAds() {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT f.user_id, f.ad_id, a.title, a.description, a.item_condition, a.location, a.price_in_cents, a.post_date, a.category" +
+                    " FROM favorites_list f" +
+                    "JOIN ads a ON f.ad_id = a.id");
             ResultSet rs = stmt.executeQuery();
             return createFavoritesFromResults(rs);
         } catch (SQLException e) {
@@ -52,7 +64,7 @@ public class MySQLFavoritesDao implements Favorites{
     @Override
     public Long insert(Favorite favorite) {
         try {
-            String insertQuery = "INSERT INTO favorites(user_id, ad_id) VALUES (?, ?)";
+            String insertQuery = "INSERT INTO favorites_list(user_id, ad_id) VALUES (?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, favorite.getUserId());
             stmt.setLong(2, favorite.getAdId());
