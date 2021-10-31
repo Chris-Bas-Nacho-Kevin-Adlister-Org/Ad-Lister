@@ -10,4 +10,6 @@ public interface Favorites {
     List<Favorite> all();
     // insert a new ad and return the new ad's id
     Long insert(Favorite favorite);
+
+    List<Ad> favoritedAds();
 }
