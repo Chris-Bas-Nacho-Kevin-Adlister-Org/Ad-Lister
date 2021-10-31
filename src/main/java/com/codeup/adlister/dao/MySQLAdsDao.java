@@ -79,6 +79,7 @@ public class MySQLAdsDao implements Ads {
             rs.getString("category")
         );
     }
+
     @Override
     public void update(Ad oldAdInfo, Ad newAdInfo) {
         String query = "UPDATE ads SET title = ?, category = ?, description = ?, item_condition = ?, post_date = ?, price_in_cents = ?, location = ? WHERE id = ?";
