@@ -61,7 +61,7 @@
             </div>
         </c:forEach>
     </div>
-    <div id="myFavoriteAdsContainer">
+    <div id="myFavoriteAdsContainer" style="display: none;">
         <c:forEach var="ad" items="${userFavoriteAds}">
             <div class="col-md-6">
                 <h2>${ad.title}</h2>
