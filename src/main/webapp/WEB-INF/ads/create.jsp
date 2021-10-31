@@ -82,5 +82,7 @@
 <%--        var priceField = document.getElementById('priceInCents');--%>
 <%--        priceField.addEventListener("keyup", validatePrice())--%>
 <%--    </script>--%>
+
+        <jsp:include page="/WEB-INF/partials/bootstrap.jsp"/>
 </body>
 </html>
