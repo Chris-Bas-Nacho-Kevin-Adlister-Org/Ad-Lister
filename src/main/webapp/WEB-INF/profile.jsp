@@ -24,10 +24,25 @@
 <br>
 <%-- Here we'll have a tab for viewing the user's ads and one for viewing their favorites --%>
 <div class="container">
+
+<%--    <ul class="nav nav-pills">--%>
+<%--        <li id="adsButton" role="presentation" class="active">--%>
+<%--            <a href="#">My Ads</a>--%>
+<%--        </li>--%>
+<%--        <li id="favoritesButton" role="presentation">--%>
+<%--            <a href="#">My Favorites</a>--%>
+<%--        </li>--%>
+<%--    </ul>--%>
+
     <ul class="nav nav-pills">
-        <li id="adsButton" role="presentation" class="active"><a href="#">My Ads</a></li>
-        <li id="favoritesButton" role="presentation"><a href="#">My Favorites</a></li>
+        <li role="presentation" class="nav-item">
+            <a id="adsButton" class="nav-link active" aria-current="page" href="#">My Ads</a>
+        </li>
+        <li role="presentation" class="nav-item">
+            <a id="favoritesButton" class="nav-link" href="#">My Favorites</a>
+        </li>
     </ul>
+
     <div id="myAdsContainer">
         <c:forEach var="ad" items="${userAds}">
             <div class="col-md-6">
@@ -55,6 +70,9 @@
         </c:forEach>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 <script>
     <%--        script that handles activating and deactivating the above buttons and switching the display --%>
     $(document).ready(function(){
@@ -81,6 +99,8 @@
         });
     });
 </script>
+
+<jsp:include page="/WEB-INF/partials/bootstrap.jsp"/>
 
 </body>
 </html>
