@@ -48,6 +48,8 @@
     <script>
 <%-- found initial source for the idea here https://www.java4s.com/jquery-tutorials/submit-form-without-refreshing-page-in-javajsp-with-jquery/ --%>
         $(document).ready(function() {
+
+
             $('.favorite').click(function(e) {
                 e.preventDefault();
                 if($(this).css("background-color") !="red"){
@@ -57,8 +59,8 @@
                 }
                 //need to get the id of the ad which I'm trying to include as part of the ad-id span
                 //then we can make some sort of ajax request???? Check the commented link above
-                let adID = $(this).next().data();
-                let userID = $(this).next().next().data();
+                let adID = $(this).next().data().val();
+                let userID = $(this).next().next().data().val();
                 console.log(adID);
                 console.log(userID);
 

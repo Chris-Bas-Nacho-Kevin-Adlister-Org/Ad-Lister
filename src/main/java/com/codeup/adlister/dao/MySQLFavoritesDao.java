@@ -3,11 +3,13 @@ package com.codeup.adlister.dao;
 import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.Favorite;
 import com.mysql.cj.jdbc.Driver;
+import com.codeup.adlister.dao.MySQLAdsDao;
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class MySQLFavoritesDao implements Favorites{
     private Connection connection = null;
@@ -35,16 +37,16 @@ public class MySQLFavoritesDao implements Favorites{
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
-    public List<Favorite> FavoritedAds() {
+    public List<Ad> favoritedAds() {
         PreparedStatement stmt = null;
         try {
             stmt = connection.prepareStatement("SELECT f.user_id, f.ad_id, a.title, a.description, a.item_condition, a.location, a.price_in_cents, a.post_date, a.category" +
-                    " FROM favorites_list f" +
-                    "JOIN ads a ON f.ad_id = a.id");
+                    " FROM favorites_list AS f " +
+                    "JOIN ads AS a ON f.ad_id = a.id");
             ResultSet rs = stmt.executeQuery();
-            return createFavoritesFromResults(rs);
+            return DaoFactory.getAdsDao().createAdsFromResults(rs);
         } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving all ads.", e);
+            throw new RuntimeException("Error retrieving the favorited ads.", e);
         }
     }
     private List<Favorite> createFavoritesFromResults(ResultSet rs) throws SQLException {
@@ -64,7 +66,7 @@ public class MySQLFavoritesDao implements Favorites{
     @Override
     public Long insert(Favorite favorite) {
         try {
-            String insertQuery = "INSERT INTO favorites_list(user_id, ad_id) VALUES (?, ?)";
+            String insertQuery = "INSERT INTO favorites_list (user_id, ad_id) VALUES (?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, favorite.getUserId());
             stmt.setLong(2, favorite.getAdId());

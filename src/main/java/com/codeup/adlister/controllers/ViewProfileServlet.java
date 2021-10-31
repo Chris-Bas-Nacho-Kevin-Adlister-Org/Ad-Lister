@@ -24,7 +24,7 @@ public class ViewProfileServlet extends HttpServlet {
         request.setAttribute("ads", DaoFactory.getAdsDao().all());
         List<Ad> allAds = DaoFactory.getAdsDao().all();
         List<Ad> userAds = new ArrayList<Ad>();
-        List<Ad> userFavoriteAds = new ArrayList<Ad>();
+        List<Ad> userFavoriteAds = DaoFactory.getFavoritesDao().favoritedAds();
         User currentUser = ((User) request.getSession().getAttribute("user"));
         for(Ad ad : allAds){
             if(ad.getUserId() == currentUser.getId()){
