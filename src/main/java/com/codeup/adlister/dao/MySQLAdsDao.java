@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.io.FileInputStream;
@@ -77,6 +78,26 @@ public class MySQLAdsDao implements Ads {
             rs.getString("location"),
             rs.getString("category")
         );
+    }
+    @Override
+    public void update(Ad oldAdInfo, Ad newAdInfo) {
+        String query = "UPDATE ads SET title = ?, category = ?, description = ?, item_condition = ?, post_date = ?, price_in_cents = ?, location = ? WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, newAdInfo.getTitle());
+            stmt.setString(2, newAdInfo.getDescription());
+            stmt.setString(3, newAdInfo.getCondition());
+            stmt.setDate(4, newAdInfo.getPostDate());
+            stmt.setInt(5, newAdInfo.getPriceInCents());
+            stmt.setString(6, newAdInfo.getLocation());
+            stmt.setString(7, newAdInfo.getCategory());
+            stmt.setLong(8, oldAdInfo.getId());
+
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating ad info", e);
+        }
     }
 
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
