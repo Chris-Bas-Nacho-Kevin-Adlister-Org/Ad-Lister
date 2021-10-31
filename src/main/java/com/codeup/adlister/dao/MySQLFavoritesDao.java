@@ -40,7 +40,7 @@ public class MySQLFavoritesDao implements Favorites{
     public List<Ad> favoritedAds() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT f.user_id, f.ad_id, a.title, a.description, a.item_condition, a.location, a.price_in_cents, a.post_date, a.category" +
+            stmt = connection.prepareStatement("SELECT f.user_id, f.ad_id AS id, a.title, a.description, a.item_condition, a.location, a.price_in_cents, a.post_date, a.category" +
                     " FROM favorites_list AS f " +
                     "JOIN ads AS a ON f.ad_id = a.id");
             ResultSet rs = stmt.executeQuery();
