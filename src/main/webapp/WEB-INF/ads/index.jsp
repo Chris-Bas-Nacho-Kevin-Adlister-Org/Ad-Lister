@@ -45,6 +45,9 @@
 
     </div>
     </div>
+
+    <jsp:include page="/WEB-INF/partials/bootstrap.jsp"/>
+
     <script>
 <%-- found initial source for the idea here https://www.java4s.com/jquery-tutorials/submit-form-without-refreshing-page-in-javajsp-with-jquery/ --%>
         $(document).ready(function() {

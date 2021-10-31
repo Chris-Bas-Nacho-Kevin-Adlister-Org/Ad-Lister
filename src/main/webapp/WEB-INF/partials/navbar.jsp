@@ -5,7 +5,7 @@
 <% User user = (User) request.getSession().getAttribute("user"); %>
 
 <c:choose>
-<%--    If user is NOT logged in, show the following navbar--%>
+    <%--    If user is NOT logged in, show the following navbar--%>
     <c:when test="${user != null}">
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
             <div class="container-fluid">
@@ -25,11 +25,11 @@
 
     </c:when>
 
-<%--    Otherwise, if user is logged in show this navbar instead--%>
+    <%--    Otherwise, if user is logged in show this navbar instead--%>
     <c:otherwise>
 
 
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
             <div class="container-fluid">
                     <%--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">--%>
                     <%--                <span class="navbar-toggler-icon"></span>--%>
@@ -45,5 +45,3 @@
         </nav>
     </c:otherwise>
 </c:choose>
-
-
