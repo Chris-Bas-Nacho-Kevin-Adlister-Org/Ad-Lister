@@ -32,6 +32,7 @@ public class ViewProfileServlet extends HttpServlet {
 //                System.out.println("Found an ad by this user");
             }
         }
+//        Get list of logged in user's favorites
 //        for(Ad ad : allAds){
 //
 //        }
