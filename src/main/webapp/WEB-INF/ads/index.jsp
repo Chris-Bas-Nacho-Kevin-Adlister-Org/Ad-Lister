@@ -32,8 +32,8 @@
                 <div class="row g-0">
                     <div class="col-md-4">
                         <div class=" border-0 d-flex flex-row-reverse">
-                            <button class="favorite border-0 bg-transparent">
-                                <span style="font-size:200%;color:red; margin-right: 1rem; background:none;">&hearts;</span>
+                            <button data-adId="${ad.id}" class="favorite border-0 bg-transparent">
+                                <span style="font-size:200%;color:gray; margin-right: 1rem; background:none;">&hearts;</span>
                             </button>
 <%--                            <span class="ad-id border-0r" data="${ad.id}"></span>--%>
 <%--                            <span class="user-id border-0" data="${user.id}"></span>--%>
@@ -127,23 +127,24 @@
             }
             //need to get the id of the ad which I'm trying to include as part of the ad-id span
             //then we can make some sort of ajax request???? Check the commented link above
-            let adID = $(this).next().data().value; //this line doesn't work. It's supposed to grab the id of the ad whose favorite button you clicked.
+            let adID = $(this).data(); //this line doesn't work. It's supposed to grab the id of the ad whose favorite button you clicked.
             //let userID = $(this).next().next().data().value;
             //Logging to check we're grabbing it properly. once we have both we can try slapping them in ajax.
-            console.log(adID);
+            console.log(adID.adid);
             console.log(${user.id});
 
-            // $.ajax({
-            //     url: "/favorite", //urlpattern of favorites servlet should go here
-            //
-            //     type: "post",
-            //     data: value, //figure out how to pack id of session user and adId in here?
-            //     cache: false,
-            //     success: function(data) {
-            //
-            //     }
+            $.ajax({
+                url: "/favorites", //urlpattern of favorites servlet should go here
+
+                type: "post",
+                data: {adID: adID.adid, userID:${user.id}}, //figure out how to pack id of session user and adId in here?
+                cache: false,
+                success: function(data) {
+
+                }
+            })
         })
-    });
+    })
 </script>
 </body>
 
