@@ -47,7 +47,7 @@ public class EditAdServlet extends HttpServlet {
 
         System.out.println("Testing from EditAdServlet");
 
-        response.sendRedirect("/ads");
+        response.sendRedirect("/profile");
     }
 }
 
