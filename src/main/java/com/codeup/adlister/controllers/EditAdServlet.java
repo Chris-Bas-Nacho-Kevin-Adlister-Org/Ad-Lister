@@ -36,14 +36,16 @@ public class EditAdServlet extends HttpServlet {
 
         String newTitle = request.getParameter("new_title");
         String newDescription = request.getParameter("new_description");
-        String newItemCondition = request.getParameter("new_item_condition");
+        String newItemCondition = request.getParameter("new_condition");
         int newPriceInCents = Integer.parseInt(request.getParameter("new_price_in_cents"));
         String newLocation = request.getParameter("new_location");
         String newCategory = request.getParameter("new_category");
 
-        Ad newAdInfo = new Ad(sessionAdID, newTitle, newDescription, newItemCondition, newPriceInCents, newLocation, newCategory);
+        Ad newAdInfo = new Ad(newTitle, newDescription, newItemCondition, newPriceInCents, newLocation, newCategory);
 
-        DaoFactory.getAdsDao().update(newAdInfo);
+        DaoFactory.getAdsDao().update(sessionAdID, newAdInfo);
+
+        System.out.println("Testing from EditAdServlet");
 
         response.sendRedirect("/ads");
     }

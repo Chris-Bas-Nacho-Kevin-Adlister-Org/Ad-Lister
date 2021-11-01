@@ -55,7 +55,7 @@
                 <p>${ad.description}</p>
                 <p>Condition: ${ad.condition}</p>
                 <p>Post Date: ${ad.postDate}</p>
-                <p>Price In Cents${ad.priceInCents}</p>
+                <p>Price In Cents: ${ad.priceInCents}</p>
                 <p>Location: ${ad.location}</p>
                 <p>Category: ${ad.category}</p>
 
