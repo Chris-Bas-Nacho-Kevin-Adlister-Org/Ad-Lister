@@ -19,18 +19,31 @@ public class EditAdServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
+
+        long adID = Long.parseLong(request.getParameter("adID"));
+        System.out.println("doGet method: "+ adID);
+
+        request.getSession().setAttribute("adID", adID);
+
         request.getRequestDispatcher("/WEB-INF/ads/edit.jsp")
                 .forward(request, response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        Ad currentAd = ((Ad) request.getSession().getAttribute("ad"));
+
+
+        long sessionAdID = (long) request.getSession().getAttribute("adID");
+        System.out.println(sessionAdID);
+
         String newTitle = request.getParameter("new_title");
         String newDescription = request.getParameter("new_description");
         String newItemCondition = request.getParameter("new_item_condition");
         int newPriceInCents = Integer.parseInt(request.getParameter("new_price_in_cents"));
         String newLocation = request.getParameter("new_location");
         String newCategory = request.getParameter("new_category");
-        Ad newAdInfo = new Ad(currentAd.getId(), newTitle, newDescription, newItemCondition, newPriceInCents, newLocation, newCategory);           DaoFactory.getAdsDao().update(currentAd, newAdInfo);
+
+        Ad newAdInfo = new Ad(sessionAdID, newTitle, newDescription, newItemCondition, newPriceInCents, newLocation, newCategory);
+
+        DaoFactory.getAdsDao().update(newAdInfo);
 
         response.sendRedirect("/ads");
     }
