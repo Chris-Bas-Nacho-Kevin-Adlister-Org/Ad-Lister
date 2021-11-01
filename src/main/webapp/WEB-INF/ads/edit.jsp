@@ -11,15 +11,15 @@
     <form action="/ads/edit" method="post">
         <div class="form-group">
             <label for="title">Title</label>
-            <input id="title" name="title" class="form-control" type="text">
+            <input id="title" name="new_title" class="form-control" type="text">
         </div>
         <div class="form-group">
-            <label for="location">Location</label>
-            <input id="location" name="location" class="form-control" type="text">
+            <label for="new_location">Location</label>
+            <input id="new_location" name="new_location" class="form-control" type="text">
         </div>
         <div class="form-group">
-            <label for="condition">Condition</label>
-            <select id="condition" name="condition" class="form-control">
+            <label for="new_condition">Condition</label>
+            <select id="new_condition" name="new_condition" class="form-control">
                 <option value="new">New</option>
                 <option value="mint">Mint</option>
                 <option value="great">Great</option>
@@ -29,16 +29,16 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="priceInCents">Asking Price</label>
-            <input id="priceInCents" name="priceInCents" class="form-control" type="text">
+            <label for="new_price_in_cents">Asking Price</label>
+            <input id="new_price_in_cents" name="new_price_in_cents" class="form-control" type="text">
         </div>
         <div class="form-group">
-            <label for="description">Description</label>
-            <textarea id="description" name="description" class="form-control" type="text"></textarea>
+            <label for="new_description">Description</label>
+            <textarea id="new_description" name="new_description" class="form-control" type="text"></textarea>
         </div>
         <div class="form-group">
-            <label for="category">Category</label>
-            <select id="category" name="category" class="form-control">
+            <label for="new_category">Category</label>
+            <select id="new_category" name="new_category" class="form-control">
                 <option value="Event">Event</option>
                 <option value="Electronics">Electronics</option>
                 <option value="Furniture">Furniture</option>

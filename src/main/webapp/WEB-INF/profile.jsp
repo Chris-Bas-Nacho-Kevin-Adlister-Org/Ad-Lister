@@ -55,9 +55,25 @@
                 <p>${ad.description}</p>
                 <p>Condition: ${ad.condition}</p>
                 <p>Post Date: ${ad.postDate}</p>
-                <p>Price In Cents${ad.priceInCents}</p>
+                <p>Price In Cents: ${ad.priceInCents}</p>
                 <p>Location: ${ad.location}</p>
                 <p>Category: ${ad.category}</p>
+
+
+
+<%--                <form action="/ads/edit" name="sub" id="sub">--%>
+<%--                    <span class="ad-id" name="ad_id">${ad.id}</span>--%>
+<%--                    <input class="btn btn-primary" type="submit" value="Edit">--%>
+<%--                </form>--%>
+
+                <form action="/ads/edit" method="GET">
+                    <input type="hidden" name="adID" id="adID" value="${ad.id}"/>
+                    <input class="btn btn-primary" type="submit" value="Edit" id="editAdButton" data-id="${ad.id}">
+
+                </form>
+
+
+
             </div>
         </c:forEach>
     </div>
@@ -96,6 +112,13 @@
                 $("#myFavoriteAdsContainer").toggle(true);
             }
         }
+
+        // $("#editAdButton").on("click", function() {
+        //    // let adID = $(this).attr("ad-id")
+        //    //  console.log(adID);
+        //
+        // });
+
         $("#adsButton").on("click", function(){
             tabSwitch("adsButton");
         });
