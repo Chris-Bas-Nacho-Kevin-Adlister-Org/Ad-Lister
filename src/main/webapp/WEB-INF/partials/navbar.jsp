@@ -7,11 +7,8 @@
 <c:choose>
     <%--    If user is NOT logged in, show the following navbar--%>
     <c:when test="${user != null}">
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
             <div class="container-fluid">
-                    <%--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">--%>
-                    <%--                <span class="navbar-toggler-icon"></span>--%>
-                    <%--            </button>--%>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" aria-current="page" href="/">Home</a>
@@ -31,14 +28,12 @@
 
         <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
             <div class="container-fluid">
-                    <%--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">--%>
-                    <%--                <span class="navbar-toggler-icon"></span>--%>
-                    <%--            </button>--%>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" aria-current="page" href="/">Home</a>
                         <a class="nav-link" href="/ads/create">Create Ad</a>
                         <a class="nav-link" href="/login">Login</a>
+                        <a class="nav-link" href="/register">Register</a>
                     </div>
                 </div>
             </div>
