@@ -35,11 +35,12 @@
                             <button class="favorite border-0 bg-transparent">
                                 <span style="font-size:200%;color:red; margin-right: 1rem; background:none;">&hearts;</span>
                             </button>
-                            <span class="ad-id border-0r" data="${ad.id}"></span>
-                            <span class="user-id border-0" data="${user.id}"></span>
+<%--                            <span class="ad-id border-0r" data="${ad.id}"></span>--%>
+<%--                            <span class="user-id border-0" data="${user.id}"></span>--%>
                         </div>
                         <div>
-                            <jsp:include page="/WEB-INF/partials/image1.jsp"></jsp:include>
+                            pic right there
+<%--                            <jsp:include page="/WEB-INF/partials/image1.jsp"></jsp:include>--%>
                         </div>
                     </div>
                     <div class="col-md-8">
