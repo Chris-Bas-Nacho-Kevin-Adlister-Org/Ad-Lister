@@ -35,9 +35,18 @@
                 <p>${ad.priceInCents}</p>
                 <p>${ad.location}</p>
                 <p>${ad.category}</p>
-                <button class="favorite">Favorite</button>
-                <span class="ad-id" data="${ad.id}"></span>
-                <span class="user-id" data="${user.id}"></span>
+
+
+
+                <form action="/favorites" name="sub" id="sub">
+                    <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off" name="favorite_button">
+                    <label class="btn btn-outline-primary favorite" for="btn-check-outlined">Favorite</label><br>
+                </form>
+
+
+<%--                <button class="favorite">Favorite</button>--%>
+<%--                <span class="ad-id" data="${ad.id}"></span>--%>
+<%--                <span class="user-id" data="${user.id}"></span>--%>
             </div>
         </c:forEach>
 
@@ -55,6 +64,7 @@
 
             $('.favorite').click(function(e) {
                 e.preventDefault();
+                let ajaxdata = $("")
                 if($(this).css("background-color") !="red"){
                     $(this).css("background-color", "red");
                 } else {
