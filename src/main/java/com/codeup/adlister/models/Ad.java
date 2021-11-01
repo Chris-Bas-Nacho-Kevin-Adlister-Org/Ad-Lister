@@ -48,6 +48,21 @@ public class Ad {
         this.title = title;
     }
 
+    // No Date constructor
+    public Ad(String title, String description, String condition, int priceInCents, String location, String category){
+        this.category = category;
+        this.location = location;
+        this.priceInCents = priceInCents;
+        this.id = id;
+        this.description = description;
+        this.condition = condition;
+        this.userId = userId;
+        this.title = title;
+    }
+
+
+
+
 
     public String getCondition() {
         return condition;
