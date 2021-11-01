@@ -68,6 +68,12 @@
                                     <input class="btn btn-primary" type="submit" value="Edit" id="editAdButton">
                                 </form>
                             </div>
+                            <div>
+                                <form action="/ads/delete" method="POST">
+                                    <input type="hidden" name="adID" value="${ad.id}"/>
+                                    <input class="btn btn-primary" type="submit" value="Delete" id="deleteAdButton">
+                                </form>
+                            </div>
                         </div>
                         <div>
                             <p class="p-2 mt-5 fs-5">About this item </p>

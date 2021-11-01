@@ -94,10 +94,25 @@ public class MySQLAdsDao implements Ads {
             stmt.setLong(7, oldAdID);
 
             stmt.executeUpdate();
-            System.out.println("Test from mysqladsdao.update");
-            System.out.println(stmt);
+//            System.out.println("Test from mysqladsdao.update");
+//            System.out.println(stmt);
 
         } catch (SQLException e) {
+            throw new RuntimeException("Error updating ad info", e);
+        }
+    }
+
+    public void delete(long adId){
+        String query = "DELETE FROM ads WHERE id = ?";
+
+        try{
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, adId);
+
+
+            stmt.executeUpdate();
+
+        }catch (SQLException e) {
             throw new RuntimeException("Error updating ad info", e);
         }
     }
