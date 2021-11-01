@@ -12,6 +12,7 @@ public interface Ads {
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);
     void update(long oldAdID, Ad newAdInfo);
+    void delete(long adId);
 
     List<Ad> createAdsFromResults(ResultSet rs) throws SQLException;
 }

@@ -21,7 +21,7 @@ public class EditAdServlet extends HttpServlet {
         }
 
         long adID = Long.parseLong(request.getParameter("adID"));
-        System.out.println("doGet method: "+ adID);
+//        System.out.println("doGet method: "+ adID);
 
         request.getSession().setAttribute("adID", adID);
 
