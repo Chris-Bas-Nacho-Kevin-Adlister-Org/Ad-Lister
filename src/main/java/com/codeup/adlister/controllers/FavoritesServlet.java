@@ -1,4 +1,7 @@
 package com.codeup.adlister.controllers;
+import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.Favorite;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -15,6 +18,9 @@ public class FavoritesServlet extends HttpServlet{
 
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-
+//        System.out.println(request.getParameter("adID"));
+//        System.out.println(request.getParameter("userID"));
+        Favorite favorite = new Favorite(Long.parseLong(request.getParameter("userID")), Long.parseLong(request.getParameter("adID")));
+        DaoFactory.getFavoritesDao().insert(favorite);
     }
 }
